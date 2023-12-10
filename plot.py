@@ -20,9 +20,9 @@ plt.plot(do_av(".\\data2\\laser_blue_Al_",LEN,POINTS),marker='o', linestyle='das
 plt.plot(do_av(".\\data2\\laser_Al_",LEN,POINTS),marker='o', linestyle='dashed',color="green", label = "green")
 plt.title("graphene_Al")
 plt.ylabel("signal [V]")"""
-plt.plot(do_av(".\\data3\\clean_Al_enc_print_",LEN,POINTS),marker='o', linestyle='dashed',color="black",label = "no laser")
-plt.plot(do_av(".\\data3\\laser_blue_Al_enc_print_",LEN,POINTS),marker='o', linestyle='dashed',color="blue", label = "blue")
-plt.plot(do_av(".\\data3\\laser_green_Al_enc_print_",LEN,POINTS),marker='o', linestyle='dashed',color="green", label = "green")
+plt.plot(do_av(".\\data2\\clean_Cu_",LEN,POINTS),marker='o', linestyle='dashed',color="black",label = "no laser")
+plt.plot(do_av(".\\data2\\laser_blue_Cu_",LEN,POINTS),marker='o', linestyle='dashed',color="blue", label = "blue")
+plt.plot(do_av(".\\data2\\laser_green_Cu_",LEN,POINTS),marker='o', linestyle='dashed',color="green", label = "green")
 plt.title("graphene")
 plt.ylabel("signal [V]")
 

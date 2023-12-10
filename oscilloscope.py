@@ -32,7 +32,7 @@ class Sensor():
     def save_data(path:str, data:np.array):
         np.savetxt(path,data)
 
-    def predict_laser(self) -> (int,int,int,int):
+    def predict_laser(self) -> (int,int,int):
         # ML model that predicts if the laser is on or off
         # return [on/off, r, g, b]
         data = self.take_data()

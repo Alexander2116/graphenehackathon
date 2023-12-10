@@ -21,11 +21,12 @@ class Sensor():
     def __init__(self, visa_str:str = "USB0::0x2A8D::0x1797::CN57246135::INSTR"):
         self.instr = pymeasure.instruments.keysight.KeysightDSOX1102G('USB0::0x2A8D::0x1797::CN57246135::INSTR')
         self.instr.acquisition_mode = "realtime"
+        self.instr.run()
     
     def take_data(self, ch: str = "channel1", data_points: int = 250) -> np.array:
-        self.instr.run()
+        #self.instr.run()
         data: np.array = self.instr.download_data(ch, data_points)[0]
-        self.instr.stop()
+        #self.instr.stop()
         return data
     
     def save_data(path:str, data:np.array):
@@ -40,7 +41,7 @@ class Sensor():
 #inst = Sensor()
 
 
-
+"""
 inst = pymeasure.instruments.keysight.KeysightDSOX1102G('USB0::0x2A8D::0x1797::CN57246135::INSTR')
 inst.run()
 inst.acquisition_mode = "realtime"
@@ -50,4 +51,12 @@ for i in range(300):
     data: np.array = inst.download_data("channel1",250)[0]
     np.savetxt(csv_path+csv_name,data)
 inst.stop()
+"""
 
+instr = Sensor()
+
+csv_path = ".\\data2\\"
+for i in range(300):
+    csv_name ="laser_blue_Gr_" + str(i) + ".csv"
+    data: np.array = instr.take_data("channel1",250)
+    np.savetxt(csv_path+csv_name,data)

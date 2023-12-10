@@ -14,10 +14,19 @@ def do_av(path:str, len:int, points:int):
 
 LEN = 300
 POINTS = 247
+"""
+plt.plot(do_av(".\\data2\\clean_Al_",LEN,POINTS),marker='o', linestyle='dashed',color="black",label = "no laser")
+plt.plot(do_av(".\\data2\\laser_blue_Al_",LEN,POINTS),marker='o', linestyle='dashed',color="blue", label = "blue")
+plt.plot(do_av(".\\data2\\laser_Al_",LEN,POINTS),marker='o', linestyle='dashed',color="green", label = "green")
+plt.title("graphene_Al")
+plt.ylabel("signal [V]")"""
+plt.plot(do_av(".\\data2\\clean_Gr_",LEN,POINTS),marker='o', linestyle='dashed',color="black",label = "no laser")
+plt.plot(do_av(".\\data2\\laser_blue_Gr_",LEN,POINTS),marker='o', linestyle='dashed',color="blue", label = "blue")
+plt.plot(do_av(".\\data2\\laser_green_Gr_",LEN,POINTS),marker='o', linestyle='dashed',color="green", label = "green")
+plt.title("graphene")
+plt.ylabel("signal [V]")
 
-plt.plot(do_av(".\\data2\\clean_Al_",LEN,POINTS),color="black")
-plt.plot(do_av(".\\data2\\laser_blue_Al_",LEN,POINTS),color="blue")
-plt.plot(do_av(".\\data2\\laser_Al_",LEN,POINTS),color="green")
 
+plt.legend()
 plt.show()
 

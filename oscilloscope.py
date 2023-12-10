@@ -37,6 +37,8 @@ class Sensor():
         # return [on/off, r, g, b]
         data = self.take_data()
 
+    def off(self):
+        self.instr.stop()
 
 #inst = Sensor()
 
@@ -57,6 +59,8 @@ instr = Sensor()
 
 csv_path = ".\\data2\\"
 for i in range(300):
-    csv_name ="laser_blue_Gr_" + str(i) + ".csv"
+    csv_name ="laser_blue_Cu_" + str(i) + ".csv"
     data: np.array = instr.take_data("channel1",250)
     np.savetxt(csv_path+csv_name,data)
+
+instr.off()

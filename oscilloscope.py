@@ -47,7 +47,7 @@ class Sensor():
         self.instr = pymeasure.instruments.keysight.KeysightDSOX1102G(visa_str)
         self.instr.acquisition_mode = "realtime"
         self.instr.run()
-
+        """
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         input_size = 247
         hidden_size = 128
@@ -58,6 +58,7 @@ class Sensor():
         self.model.load_state_dict(torch.load(weigths_path))
         self.model.to(self.device)
         self.model.eval()
+        """
     
     def take_data(self, ch: str = "channel1", data_points: int = 250) -> np.array:
         #self.instr.run()

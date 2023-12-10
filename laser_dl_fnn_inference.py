@@ -31,10 +31,8 @@ class LaserRegression(nn.Module):
 input_size = 247
 hidden_size = 128
 output_size = 3
-num_batch = 2
 
-working_directory = 'Documents/graphene_hackathon/real_data/'
-weigths = '499.torch'
+weigths_path = '.\\499.torch'
 
 # Instantiate the model
 model = LaserRegression(input_size, hidden_size, output_size)
@@ -43,7 +41,6 @@ model.load_state_dict(torch.load(weigths_path))
 model.to(device)
 model.eval()
 
-data = np.random.uniform(0,3,size=247)
 data_tensor = torch.tensor(data, dtype=torch.float32)
 
 with torch.no_grad():

@@ -57,9 +57,9 @@ inst.stop()
 
 instr = Sensor()
 
-csv_path = ".\\data2\\"
+csv_path = ".\\data3\\"
 for i in range(300):
-    csv_name ="laser_blue_Cu_" + str(i) + ".csv"
+    csv_name ="laser_blue_Al_enc_print_" + str(i) + ".csv"
     data: np.array = instr.take_data("channel1",250)
     np.savetxt(csv_path+csv_name,data)
 

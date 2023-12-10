@@ -1,0 +1,2 @@
+blue: 405nm, 10mW
+green: 532nm, 80mW
